@@ -1,0 +1,167 @@
+import pandas as pd
+import warnings
+data = pd.read_csv("C:/Users/narendra/Downloads/food_coded.csv")
+warnings.filterwarnings('ignore')
+print(data.duplicated())
+print(data.info())
+data.drop_duplicates(inplace= True)
+print(data.info())
+#data = data.drop(columns = ['comfort_food_reasons_coded.1','eating_changes_coded1'])
+#print(data.info())
+data = data.drop(index = [15,61,73,102,104])
+print(data.info())
+'''
+for GPA in df["GPA"]:
+    if df["GPA"].dtype == 'object':
+        df["GPA"]= df["GPA"].fillna("nan", inplace = True)
+print(df["GPA"])
+print(data['GPA'].to_string())
+Gp = data["GPA"].mode()
+data["GPA"].fillna(Gp, inplace = True)
+print(Gp)
+print(data['GPA'].to_string())
+print(data.info())
+'''
+cal_day = data["calories_day"].mean()
+data["calories_day"].fillna(cal_day, inplace = True)
+print(cal_day)
+print(data.info())
+cal_scone= data["calories_scone"].mean()
+data["calories_scone"].fillna(cal_scone, inplace = True)
+print(cal_scone)
+print(data.info())
+com_food = data["comfort_food"].mode()[0]
+data["comfort_food"].fillna(com_food, inplace = True)
+print(com_food)
+print(data.info())
+com_food_reason = data["comfort_food_reasons"].mode()[0]
+data["comfort_food_reasons"].fillna(com_food_reason, inplace = True)
+print(com_food_reason)
+print(data.info())
+com_food_reason_coded = data["comfort_food_reasons_coded"].mean()
+data["comfort_food_reasons_coded"].fillna(com_food_reason_coded, inplace = True)
+print(com_food_reason_coded)
+print(data.info())
+cok = data["cook"].mean()
+data["cook"].fillna(cok, inplace = True)
+print(cok)
+print(data.info())
+cuis = data["cuisine"].mean()
+data["cuisine"].fillna(cuis, inplace = True)
+print(cuis)
+print(data.info())
+diet_cur = data["diet_current"].mode()[0]
+data["diet_current"].fillna(diet_cur, inplace = True)
+print(diet_cur)
+print(data.info())
+drnk = data["drink"].mean()
+data["drink"].fillna(drnk, inplace = True)
+print(drnk)
+print(data.info())
+eat_changes = data["eating_changes"].mode()[0]
+data["eating_changes"].fillna(eat_changes, inplace = True)
+print(eat_changes)
+print(data.info())
+emp = data["employment"].mean()
+data["employment"].fillna(emp, inplace = True)
+print(emp)
+print(data.info())
+excer = data["exercise"].mean()
+data["exercise"].fillna(excer, inplace = True)
+print(excer)
+print(data.info())
+father_edu = data["father_education"].mean()
+data["father_education"].fillna(father_edu, inplace = True)
+print(father_edu)
+print(data.info())
+father_prof = data["father_profession"].mode()[0]
+data["father_profession"].fillna(father_prof, inplace = True)
+print(father_prof)
+print(data.info())
+fav_cuis = data["fav_cuisine"].mode()[0]
+data["fav_cuisine"].fillna(fav_cuis, inplace = True)
+print(fav_cuis)
+print(data.info())
+fav_fod = data["fav_food"].mean()
+data["fav_food"].fillna(fav_fod, inplace = True)
+print(fav_fod)
+print(data.info())
+food_chihood = data["food_childhood"].mode()[0]
+data["food_childhood"].fillna(food_chihood, inplace = True)
+print(food_chihood)
+print(data.info())
+health_meal = data["healthy_meal"].mode()[0]
+data["healthy_meal"].fillna(health_meal, inplace = True)
+print(health_meal)
+print(data.info())
+idal_diet = data["ideal_diet"].mode()[0]
+data["ideal_diet"].fillna(idal_diet, inplace = True)
+print(idal_diet)
+print(data.info())
+marit_status = data["marital_status"].mean()
+data["marital_status"].fillna(marit_status, inplace = True)
+print(marit_status)
+print(data.info())
+meal_dinn_frnd = data["meals_dinner_friend"].mode()[0]
+data["meals_dinner_friend"].fillna(meal_dinn_frnd, inplace = True)
+print(meal_dinn_frnd)
+print(data.info())
+mother_edu = data["mother_education"].mean()
+data["mother_education"].fillna(mother_edu, inplace = True)
+print(mother_edu)
+print(data.info())
+mother_prof = data["mother_profession"].mode()[0]
+data["mother_profession"].fillna(mother_prof, inplace = True)
+print(mother_prof)
+print(data.info())
+on_off_camp = data["on_off_campus"].mean()
+data["on_off_campus"].fillna(on_off_camp, inplace = True)
+print(on_off_camp)
+print(data.info())
+pers_food = data["persian_food"].mean()
+data["persian_food"].fillna(pers_food, inplace = True)
+print(pers_food)
+print(data.info())
+self_perception_wt = data["self_perception_weight"].mean()
+data["self_perception_weight"].fillna(self_perception_wt, inplace = True)
+print(self_perception_wt)
+print(data.info())
+sup = data["soup"].mean()
+data["soup"].fillna(sup, inplace = True)
+print(sup)
+print(data.info())
+sport = data["sports"].mean()
+data["sports"].fillna(sport, inplace = True)
+print(sport)
+print(data.info())
+tort_calories = data["tortilla_calories"].mean()
+data["tortilla_calories"].fillna(tort_calories, inplace = True)
+print(tort_calories)
+print(data.info())
+type_sport = data["type_sports"].mode()[0]
+data["type_sports"].fillna(type_sport, inplace = True)
+print(type_sport)
+print(data.info())
+wt = data["weight"].mode()[0]
+data["weight"].fillna(wt, inplace = True)
+print(wt)
+print(data.info())
+data.to_csv("C:/Users/narendra/Downloads/food_coded.csv", index = False)
+print(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
